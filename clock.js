@@ -57,21 +57,6 @@ function draw_number(){
         .attr("stroke-width",4)
         .attr("stroke", function(d) { return d.color; });
 
-    // svg.append("circle")
-    //     .attr("cx",318)
-    //     .attr("cy",238)
-    //     .attr("r",200)
-    //     .attr("fill","transparent")
-    //     .attr("stroke-width",4)
-    //     .attr("stroke","lightgreen");
-    //
-    // svg.append("circle")
-    //     .attr("cx",318)
-    //     .attr("cy",238)
-    //     .attr("r",203)
-    //     .attr("fill","transparent")
-    //     .attr("stroke-width",4)
-    //     .attr("stroke","#F99F48");
 
     var c20 = d3.scale.category20();
 
@@ -90,7 +75,6 @@ function draw_number(){
         .text( function (d,i) { return i+1;})
         
 
-     // show backgroud image
 
 
 }
@@ -127,3 +111,10 @@ function init() {
     }
 
 }      
+
+
+$(function(){
+  $('#sound_button').click(function () {
+    $(this).text("クリックされました");
+    });
+})

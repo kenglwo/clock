@@ -27,6 +27,11 @@
             margin: auto;
             /* background : url("pic/rainbow.png") no-repeat; */
         }
+
+        #sound_button {
+            margin-top: 10px;
+            margin-rignt: 100px;
+        }
      
     </style>
 
@@ -46,7 +51,22 @@
         <canvas id="myCanvas" width="640" height="480"></canvas>
         <svg id="mySVG" width="642" height="482" viewBox="0 0 640 480"></svg>
         <br>
+
+
     </div>
+
+    <center>
+    <button type="button" id="sound_button">
+        <font size="4">時計音</font>
+    </button>
+    </center>
+
+    <audio id="sound1" preload="auto">
+        <source src="sound/sound1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sound2" preload="auto">
+        <source src="sound/sound2.mp3" type="audio/mp3">
+    </audio>
 
   </body>
 </html>
