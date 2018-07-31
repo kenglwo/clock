@@ -39,21 +39,10 @@ function update_clock(){
 }
 
 function draw_number(){
-    // cntxt.beginPath();
-    // cntxt.moveTo(320,240);
-    // cntxt.lineTo(320,100);
-    // cntxt.quadraticCurveTo(50,200,150,200);
-    // cntxt.bezierCurveTo(75,250,175,250,250,250);
-    // cntxt.lineTo(250,50);
-    // cntxt.lineWidth = 15;
-    // cntxt.strokeStyle = 'red';
-    // cntxt.lineCap = 'round';
-    // cntxt.lineJoin = 'round';
-    // cntxt.stroke();
 
     var svg = d3.select("svg")
         .attr("width", 642) 
-        .attr("height", 480);
+        .attr("height", 482);
 
     svg.append("circle")
         .attr("cx",318)
@@ -63,78 +52,20 @@ function draw_number(){
         .attr("stroke-width",4)
         .attr("stroke","lightgreen");
 
-    svg.append("text") 
-    .attr("x", 308)  
-    .attr("y", 75) 
-    .text("12")   
-    .attr("stroke","pink");
 
-    svg.append("text") 
-    .attr("x", 398)  
-    .attr("y", 95) 
-    .text("1")   
-    .attr("stroke","pink");
+    var c20 = d3.scale.category20();
 
+    var data = [{x: 398, y:95},{x: 458, y:155},{x: 488, y:245},{x: 458, y:330},{x: 398, y:390},{x: 313, y:416},{x: 225, y:395},{x: 175, y:330},{x: 145, y:245},{x: 160, y:160},{x: 220, y:95}, {x: 308, y:75}];
 
-    svg.append("text") 
-    .attr("x", 458)  
-    .attr("y", 155) 
-    .text("2")   
-    .attr("stroke","pink");
+    svg.selectAll("text")
+        .data(data)
+        .enter().append("text")
+        .attr("x", function(d) { return d.x;})
+        .attr("y", function(d) { return d.y;})
+        .attr("fill", function(d,i){ return c20(i);})
+        .text( function (d,i) { return i+1;})
+        
 
-    svg.append("text") 
-    .attr("x", 488)  
-    .attr("y", 245) 
-    .text("3")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 458)  
-    .attr("y", 330) 
-    .text("4")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 398)  
-    .attr("y", 390) 
-    .text("5")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 313)  
-    .attr("y", 416) 
-    .text("6")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 225)  
-    .attr("y", 395) 
-    .text("7")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 175)  
-    .attr("y", 330) 
-    .text("8")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 145)  
-    .attr("y", 245) 
-    .text("9")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 160)  
-    .attr("y", 160) 
-    .text("10")   
-    .attr("stroke","pink");
-
-    svg.append("text") 
-    .attr("x", 220)  
-    .attr("y", 95) 
-    .text("11")   
-    .attr("stroke","pink");
 }
 
 
