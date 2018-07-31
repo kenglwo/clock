@@ -51,19 +51,90 @@ function draw_number(){
     // cntxt.lineJoin = 'round';
     // cntxt.stroke();
 
-    // svg = d3.select(".cv")
-    //     .append("svg")
-    //     .attr("width", 642)
-    //     .attr("height", 482)
-    svg = d3.select("svg")
-        .append("circle")
-        .style("stroke", "gray")
-        .style("fill", "white")
-        .attr("r", 40)
-        .attr("cx", 50)
-        .attr("cy", 50)
-        // .on("mouseover", -> d3.select(this).style("fill", "aliceblue"))
-        // .on("mouseout", -> d3.select(this).style("fill", "white"))
+    var svg = d3.select("svg")
+        .attr("width", 642) 
+        .attr("height", 480);
+
+    svg.append("circle")
+        .attr("cx",318)
+        .attr("cy",238)
+        .attr("r",200)
+        .attr("fill","transparent")
+        .attr("stroke-width",4)
+        .attr("stroke","lightgreen");
+
+    svg.append("text") 
+    .attr("x", 308)  
+    .attr("y", 75) 
+    .text("12")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 398)  
+    .attr("y", 95) 
+    .text("1")   
+    .attr("stroke","pink");
+
+
+    svg.append("text") 
+    .attr("x", 458)  
+    .attr("y", 155) 
+    .text("2")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 488)  
+    .attr("y", 245) 
+    .text("3")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 458)  
+    .attr("y", 330) 
+    .text("4")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 398)  
+    .attr("y", 390) 
+    .text("5")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 313)  
+    .attr("y", 416) 
+    .text("6")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 225)  
+    .attr("y", 395) 
+    .text("7")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 175)  
+    .attr("y", 330) 
+    .text("8")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 145)  
+    .attr("y", 245) 
+    .text("9")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 160)  
+    .attr("y", 160) 
+    .text("10")   
+    .attr("stroke","pink");
+
+    svg.append("text") 
+    .attr("x", 220)  
+    .attr("y", 95) 
+    .text("11")   
+    .attr("stroke","pink");
 }
 
 
