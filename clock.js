@@ -44,18 +44,38 @@ function draw_number(){
         .attr("width", 642) 
         .attr("height", 482);
 
-    svg.append("circle")
+
+    var colors = [{r: 200, color: "#D2F200"}, {r: 206, color: "#59F200"}, {r: 209, color: "#00F220"}, {r: 212, color: "#00F299"}, {r: 215, color: "#00D2F2"}, {r: 218, color: "#0059F2"}, {r: 221, color: "#2000F2"}, {r: 224, color: "#9900F2"}, {r: 227, color: "#F200D2"}, {r: 230, color: "#F20059"}, {r: 233, color: "#F22000"}]
+
+    svg.selectAll("circle")
+        .data(colors)
+        .enter().append("circle")
         .attr("cx",318)
         .attr("cy",238)
-        .attr("r",200)
+        .attr("r", function(d) { return d.r;})
         .attr("fill","transparent")
         .attr("stroke-width",4)
-        .attr("stroke","lightgreen");
+        .attr("stroke", function(d) { return d.color; });
 
+    // svg.append("circle")
+    //     .attr("cx",318)
+    //     .attr("cy",238)
+    //     .attr("r",200)
+    //     .attr("fill","transparent")
+    //     .attr("stroke-width",4)
+    //     .attr("stroke","lightgreen");
+    //
+    // svg.append("circle")
+    //     .attr("cx",318)
+    //     .attr("cy",238)
+    //     .attr("r",203)
+    //     .attr("fill","transparent")
+    //     .attr("stroke-width",4)
+    //     .attr("stroke","#F99F48");
 
     var c20 = d3.scale.category20();
 
-    var data = [{x: 398, y:95},{x: 458, y:155},{x: 488, y:245},{x: 458, y:330},{x: 398, y:390},{x: 313, y:416},{x: 225, y:395},{x: 175, y:330},{x: 145, y:245},{x: 160, y:160},{x: 220, y:95}, {x: 308, y:75}];
+    var data = [{x: 398, y:110},{x: 455, y:165},{x: 480, y:253},{x: 455, y:335},{x: 398, y:400},{x: 313, y:416},{x: 227, y:395},{x: 165, y:335},{x: 143, y:250},{x: 163, y:167},{x: 223, y:105}, {x: 307, y:82}];
 
     svg.selectAll("text")
         .data(data)
@@ -63,8 +83,15 @@ function draw_number(){
         .attr("x", function(d) { return d.x;})
         .attr("y", function(d) { return d.y;})
         .attr("fill", function(d,i){ return c20(i);})
+        // .style("font-family", "sans-serif")
+        .style("font-family", 'Lobster')
+        // .style("font-family", 'Lobster', cursive)
+        .style("font-size", "30px")
         .text( function (d,i) { return i+1;})
         
+
+     // show backgroud image
+
 
 }
 
