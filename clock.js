@@ -86,8 +86,12 @@ function update() {
 }
 
 function start() {
-    setInterval("update();",100);
+    setInterval("update();",1000);
     update();
+}
+function sound() {
+    setInterval("emit_sound();", 1000);
+    emit_sound();
 }
 
 
@@ -95,6 +99,7 @@ function init() {
     cnvs = document.getElementById('myCanvas');
     cntxt = cnvs.getContext('2d');
 
+    sound();
 
     img[0].onload = function() {
         loadCount++;
@@ -112,9 +117,36 @@ function init() {
 
 }      
 
+var sound_flag = true;
+var clock_time = 0;
+
+function emit_sound() {
+    if (sound_flag) {
+
+        if(Math.floor(clock_time % 2) == 1){
+            $("#sound1").get(0).play();
+            clock_time++;
+        } else {
+            $("#sound2").get(0).play();
+            clock_time++;
+        }
+
+    } else {
+        $("#sound1").get(0).pause();
+    }
+
+} 
 
 $(function(){
   $('#sound_button').click(function () {
-    $(this).text("クリックされました");
+      if(sound_flag == true){
+          // $(this).text("音有り");
+          $(this).attr('src', 'pic/sound_off.png');
+          sound_flag = false;
+      } else {
+          // $(this).text("音無し");
+          $(this).attr('src', 'pic/sound_on.png');
+          sound_flag = true;
+    }
     });
 })

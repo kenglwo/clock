@@ -5,18 +5,27 @@
     <title>アナログ時計</title>
 
     <style>
+        body {
+            background-image: url("pic/wallpaper.jpeg")
+        }    
+        h1 {
+            text-align: center;
+            padding-left: 450px;
+            font-family: 'Yu Gothic';
+            color: #FF5F17;
+        }
         h3 {
             text-align: center;
             padding-left: 450px;
+            font-family: 'Lobster';
+            color: green;
         }
         div.cv {
             position: relative;
             text-align:center;
             }
         #myCanvas {
-            border-width:1px;
-            border-style:solid;
-            border-color:#000000;
+            border-style:hidden;
         }
         #mySVG {
             position: absolute;
@@ -25,7 +34,6 @@
             bottom: 0;
             left: -2px;
             margin: auto;
-            /* background : url("pic/rainbow.png") no-repeat; */
         }
 
         #sound_button {
@@ -51,21 +59,19 @@
         <canvas id="myCanvas" width="640" height="480"></canvas>
         <svg id="mySVG" width="642" height="482" viewBox="0 0 640 480"></svg>
         <br>
-
-
     </div>
 
     <center>
-    <button type="button" id="sound_button">
-        <font size="4">時計音</font>
+    <input type="image" src="pic/sound_on.png" width="50px" height="50px" id="sound_button">
+        <!-- <font size="4">音無し</font> -->
     </button>
     </center>
 
     <audio id="sound1" preload="auto">
-        <source src="sound/sound1.mp3" type="audio/mp3">
+        <source src="sound/water-drop1.mp3" type="audio/mp3">
     </audio>
     <audio id="sound2" preload="auto">
-        <source src="sound/sound2.mp3" type="audio/mp3">
+        <source src="sound/water-drop2.mp3" type="audio/mp3">
     </audio>
 
   </body>
