@@ -1,5 +1,5 @@
 var cnvs, cntxt;
-var loadCount=0; // loadされた画像の数
+var loadCount=0; 
 var imagefiles = ['pic/clockmojiban.png','pic/hneedleC71_26.png','pic/mneedleC71_21.png','pic/sneedleC71_16.png'];
 var img = new Array(4);
 
@@ -8,10 +8,8 @@ for( var i = 0; i<img.length; i++ ) {
 }
 
 
-
 function update_clock(){
     cntxt.clearRect(0,0,cnvs.width,cnvs.height);
-    // cntxt.drawImage(img[4],0,0);
     cntxt.drawImage(img[0],0,0);
     var now = new Date();
     var s = now.getSeconds() + now.getMilliseconds() / 1000;
@@ -68,14 +66,9 @@ function draw_number(){
         .attr("x", function(d) { return d.x;})
         .attr("y", function(d) { return d.y;})
         .attr("fill", function(d,i){ return c20(i);})
-        // .style("font-family", "sans-serif")
         .style("font-family", 'Lobster')
-        // .style("font-family", 'Lobster', cursive)
         .style("font-size", "30px")
         .text( function (d,i) { return i+1;})
-        
-
-
 
 }
 
@@ -140,11 +133,9 @@ function emit_sound() {
 $(function(){
   $('#sound_button').click(function () {
       if(sound_flag == true){
-          // $(this).text("音有り");
           $(this).attr('src', 'pic/sound_off.png');
           sound_flag = false;
       } else {
-          // $(this).text("音無し");
           $(this).attr('src', 'pic/sound_on.png');
           sound_flag = true;
     }
